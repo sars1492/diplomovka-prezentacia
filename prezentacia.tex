@@ -1,0 +1,209 @@
+%% prezentacia.tex
+%% Copyright 2016, 2017 Juraj Szasz <juraj.szasz3@gmail.com>
+%
+% This work may be distributed and/or modified under the conditions of the LaTeX
+% Project Public License, either version 1.3 of this license or (at your option)
+% any later version.  The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX version
+% 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `author-maintained'.
+%
+% This work consists of the following files: diplomovka.tex, 01-uvod.tex,
+% 02-symboly.tex, 03-kapitola1.tex, 04-kapitola2.tex, 05-kapitola3.tex,
+% 06-zaver.tex, 07-priloha.tex, literatura.bib, opakuj.sty, ucmthesis.sty and
+% ucmplainnat.bst.
+%
+% The file `ucmplainnat.bst' was derived from the `csplainnat.bst' BibTeX style
+% for Czech references style (According to CSN ISO 690) available at:
+%   https://github.com/mudrd8mz/csplainnat
+%
+% All the other files above were derived from the Masaryk University, Faculty of
+% Science template available for download at:
+%   http://www.sci.muni.cz/NW/STUD/SablonyPraci/Sablona_Pruvodce_(v1.9).zip
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Sablona Bc+Mgr+RNDr pre FPV UCM
+%%  Autor: Juraj Szasz (juraj.szasz3@gmail.com)
+%%
+%%  Zalozene na sablone PriF MU v Brne
+%%    Autor: Petr Zemanek (zemanekp@math.muni.cz)
+%%
+%%  Typeset in LaTeX-2e
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[12pt,a4paper,oneside,final]{book}
+\documentclass{beamer}
+\usetheme{default} % pouzitie default temy
+
+\usepackage[utf8]{inputenc}
+\usepackage[LGR,IL2]{fontenc}
+\usepackage[english,slovak]{babel} % posledny jazyk v zozname je implicitny
+
+\usepackage{mathptmx}  % volne dostupny font Adobe Times Roman
+
+\usepackage{longtable} % balik pre tabulky presahujuce jednu stranu
+                       % (potrebne pre zoznam znaceni)
+
+\usepackage{booktabs}  % balík pre vysadzanie profesionalnych tabuliek
+
+% balik pre postranne popisky obrazkov a tabuliek
+\usepackage[leftcaption,ragged]{sidecap}
+
+\usepackage{amsmath,amssymb,amsthm} % baliky pre matematicke vzorce
+\usepackage{natbib}    % balik pre harvardsky styl citacii
+
+\usepackage{gfsporson} % balik pre vysadzanie greckeho textu
+\usepackage{fancyvrb}  % balik pre oramovanie verbatim prostredia
+\usepackage{tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Nastavenie stylu citacii
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ucmplainnat}
+\setcitestyle{authoryear}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Nastavenie sablony
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[Mgr,Farebne]{ucmthesis}   % nahrad "Farebne" za "Tlac", ked chces
+                                      % dokument tlacit; "Farebne" je len pre
+                                      % zdielanie online
+
+\graphicspath{{obr/}}                 % implicitna cesta pre umiestnenie
+                                      % obrazkov v adresari 'obr'
+
+\author{Bc. Juraj Szász}
+
+\title{Scientometrická analýza FPV~UCM v~Trnave}
+
+\date{\today}
+
+%\NazovKatedry{Katedra biológie}{Department of Biology}
+
+%\MiestoRieseniaPrace{Trnava}{Trnava}
+
+%\AkademickyRok{2016/2017}
+
+%\SkolitelSTitulmi{prof. RNDr. Ján Kraic, PhD}
+
+%\StudijnyProgram{Aplikovaná biológia}{Aplicated Biology}
+
+%\StudijnyObor{Biológia}{Biology}
+
+
+%\TextAbstraktov{Scientometrická analýza slúži na kvalitatívne a~kvantitatívne
+% hodnotenie vedeckej práce.  Vykonáva sa pomocou štatistickej analýzy
+% publikačnej činnosti jednotlivých pracovníkov, inštitúcií a~dokonca celých
+% krajín.  Kvalitu vedeckých publikácií určuje množstvo citácií (odkazov) na
+% publikácie.  Viac citácií na článok vyjadruje jeho popularitu, kvalitu
+% a~prínos pre vedecký pokrok.  Cieľom tejto práce je kvalitatítne
+% a~kvantitatívne zhodnotiť publikačnú činnosť pracovníkov Fakulty prírodných
+% vied Univerzity sv.\,Cyrila a Metoda v~Trnave za~obdobie 2000--2016.}{The
+% purpose of scientometric analysis is to provide qualitative and quantitative
+% evaluation of the scientific work.  It is being performed by statistical
+% analysis of the publishing activity---addressing individual researchers,
+% institutions or even whole countries.  The quality of a scientific publication
+% is derived from the number of citations.  The amount of references to a paper
+% determines its popularity, quality and its impact on scientific progress.  The
+% goal of this thesis is to carry out qualitative and quantitative analysis of
+% the publishing activity of the academic staff members affiliated to Faculty of
+% Natural Science, University of Ss.\,Cyril and Methodeus in Trnava during
+% 2000--2016.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Definícia vlastných príkazov
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Cbb}{\mathbb{C}}
+\newcommand{\Rbb}{\mathbb{R}}
+\newcommand{\Zbb}{\mathbb{Z}}
+\newcommand{\Nbb}{\mathbb{N}}
+\newcommand{\tm}{\texttrademark}
+\newcommand{\R}{\textsuperscript{\textregistered}}
+
+% Environment for source code
+\newenvironment{source}[1][\scriptsize\bfseries]{
+  \begin{list}{}{
+      \setlength{\leftmargin}{1em}}%
+      \setlength{\itemsep}{0pt}%
+      \setlength{\parskip}{0pt}%
+      \setlength{\parsep}{0pt}%
+      \renewcommand{\baselinestretch}{1.0}%
+  \item#1}
+  {\end{list}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Dodatocne nastavenia
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Vytvori pomocny subor pre register
+%\makeindex
+
+% Zapnutie opakovania matematickych symbolov
+% \input{opakuj.sty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Zaciatok dokumentu
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%
+%%  Uvodna strana
+%%
+
+\frame{\maketitle}
+
+\frame{\tableofcontents}
+
+
+%%
+%%  Kapitola 1: Literarny prehlad
+%%
+\input{part1}
+
+%%
+%%  Kapitola 2: Materialy a metody
+%%
+%\vloz{kapitola2}
+
+%%
+%%  Kapitola 3: Materialy a metody
+%%
+%\vloz{kapitola3}
+
+
+%%
+%%  Kapitola 4: Vysledky a diskusia
+%%
+%\vloz{kapitola4}
+
+%%
+%%  Zaver
+%%
+%\pdfbookmark{Záver}{Zaver}
+%\vloz{zaver}
+
+%%
+%%  Zoznam pouzitej literatury
+%%
+\begin{frame}
+  \frametitle{Zoznam literatúry}
+\bibliography{literatura}{}
+\end{frame}
+
+\end{document}
