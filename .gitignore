@@ -3,7 +3,7 @@
 *.out
 *.log
 
-# Temporary files for 'Table of Contents', 'List of Figures' and 
+# Temporary files for 'Table of Contents', 'List of Figures' and
 # 'List of Tables'
 *.toc
 *.lof
@@ -31,6 +31,10 @@
 # Vim backup files
 *~
 .*~
+
+# Beamer temporary files
+*.nav
+*.snm
 
 # Generated document
 prezentacia.pdf
