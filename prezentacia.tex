@@ -38,6 +38,7 @@
 %\documentclass[12pt,a4paper,oneside,final]{book}
 \documentclass{beamer}
 \usetheme{default} % pouzitie default temy
+\setbeamertemplate{frametitle}[default][center]
 
 \usepackage[utf8]{inputenc}
 \usepackage[LGR,IL2]{fontenc}
@@ -59,6 +60,7 @@
 \usepackage{gfsporson} % balik pre vysadzanie greckeho textu
 \usepackage{fancyvrb}  % balik pre oramovanie verbatim prostredia
 \usepackage{tabularx}
+%\usepackage{colorx}    % balík pre farebný text
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -169,6 +171,145 @@
 \frame{\maketitle}
 
 \frame{\tableofcontents}
+
+\begin{frame}
+  \frametitle{Definície}
+  \framesubtitle{Scientometria}
+  \begin{itemize}
+    \item Scientometria je hodnotenie vedy (publikácií, pracovníkov,
+      inštitúcií, až krajín) použitím matematických a štatistickým metód
+      \citep{Vinkler2001}.
+    \item Základ hodnotenia tvorí počet referencíí na publikáciu tzv. citácie.
+      Pričom táto hodnota predstavuje impakt (dopad) daného dokumentu na vedu,
+      teda kvalitu \citep{Vavrikova2008}.
+    \item V scientometrie sa môže hodnotiť aj ekonomický aspekt vedeckého
+      výskumu (napr. financovanie inštitúcií a grantov). Ale väčšiu váhu má
+      hodnotenie na základe citácií, pretože financovanie samo o sebe nič
+      nehovorí o dopade daného objavu \citep{Bellis2009}.
+    %\item Kvalitu vedeckých publikácií na internete je možné hodnotiť na základe frekvencie 
+    %  počtu prístupov na ne. Tento aspekt skúma cybermetria (resp. webometria).
+  \end{itemize}
+\end{frame}
+
+%\begin{frame}
+  %\frametitle{Celkový počet publikácií jednotlivých katedier FPV UCM v~Trnave}
+%  \frametitle{Definície}
+%  \framesubtitle{Vzťah medzi disciplínami v rámci informetrie}
+  %\framesubtitle{Celkový počet publikácií jednotlivých katedier}
+%  \begin{figure}
+%    \centering
+%    \includegraphics[scale=0.5]{fields.png}
+%    \caption{\citep{Bjorneborn2004}}
+%  \end{figure}
+%\end{frame}
+
+\begin{frame}
+  \frametitle{Definície}
+  \framesubtitle{Výber citačných indikátorov použitých v diplomovej práci}
+
+  \centering\small
+  \begin{table}
+  \begin{tabularx}{\textwidth}{llccr}
+    \toprule\noalign{\vspace{.3ex}}
+    slovenský  názov                     & anglický názov                         & skratka                 & kap.                 \\[0.3ex]
+    \midrule\noalign{\vspace{.5ex}}
+    {\color{red} impakt faktor}          & {\color{red}\emph{Journal Impact Factor}}           & IF                      &  1.5.1        \\[0.5ex]
+    {\color{red} SciMago rang časopisu}  & {\color{red}\emph{SciMago Journal Rank}}            & SJR                     &  1.5.2       \\[0.5ex]
+    {\color{red}CiteScore}$^\dagger$     & {\color{red}\emph{CiteScore}}                       & CS                      &  1.5.3       \\[0.5ex]
+    {\color{red}normalizovaný impakt}    & {\color{red}\emph{Source normalized impact}}        & SNIP                    &  1.5.4      \\[-0.25ex]
+    {\color{red}časopisu  na dokument}   & {\color{red}\emph{per paper}}                       &                         &                       \\[0.5ex]
+    Hirschov index                       & \emph{Hirsh's index}                   & $h$-index               &  1.6.1    \\[1.5ex]
+    Eggheov index                        & \emph{Egghe's index}                   & $g$-index               &  1.6.2    \\[0.5ex]
+    \bottomrule \\ [-2ex]
+    \multicolumn{5}{l}{\footnotesize {\color{red} červenou farbou} sú označené citačné indikátory na hodnotenie časopisov} \\
+    \multicolumn{5}{l}{\footnotesize $^\dagger$ indikátory, ktorých názov sa neprekladá so slovenčiny}
+  \end{tabularx}
+    \caption{\citet{Szasz2017}}
+  \end{table}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Praktická časť}
+  \framesubtitle{Program Publish or Perish}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.25]{publish-or-perish_wine.png}
+    \caption{\citet{Harzing2011}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  %\frametitle{Celkový počet publikácií jednotlivých katedier FPV UCM v~Trnave}
+  \frametitle{Výsledky}
+  \framesubtitle{Celkový počet publikácií jednotlivých katedier FPV UCM v~Trnave}
+  %\framesubtitle{Celkový počet publikácií jednotlivých katedier}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{plot-results-data-papers.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Výsledky}
+  \framesubtitle{Celkový počet citácií jednotlivých katedier FPV UCM v~Trnave}
+  %\framesubtitle{Celkový počet citácií jednotlivých katedier}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{plot-results-data-citations.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Výsledky}
+  \framesubtitle{Medián $h$-indexu pre jednotlivé katedry FPV UCM v~Trnave}
+  %\framesubtitle{Medián $h$-indexu pre jednotlivé katedry}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{plot-results-data-h_index.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Výsledky}
+  \framesubtitle{Medián $g$-indexu pre jednotlivé katedry FPV UCM v~Trnave}
+  %\framesubtitle{Medián $g$-indexu pre jednotlivé katedry}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{plot-results-data-g_index.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Výsledky}
+  \framesubtitle{Svetové časopisy s najväčším počtom publikácií z FPV UCM v~Trnave}
+  \vspace{-0.5em}
+
+  {\small
+  \begin{tabular}{lcccccc}
+    %\caption*{Prehľad časopisov, v~ktorých publikovali pracovníci FPV UCM v~Trnave.}
+    \toprule\noalign{\vspace{.3ex}}
+     %\hline
+     Názov časopisu                                                                   & $n^\dagger$ & IF & SJR  & CS$^\ddagger$ & SNIP           \\[0.3ex]
+   \midrule\noalign{\vspace{.5ex}}
+     % \hline
+
+    Chemical Papers                                                                    & 25     & 1.326   & 0.382 &  1.36      & 0.56                  \\
+    Polyhedron                                                                         & 22     & 2.108   & 0.592 &  2.02      & 0.777                 \\
+    Biologia                                                                           & 15     & 1,10    & 0.322 &  0.88      & 0.88                  \\
+    Cereal Research Communications                                                     & 14     & 0.528   & 0.305 &  0.62      & 0.515                 \\
+    Dalton Transactions                                                                & 14     & 4.177   & 1.404 &  4.1       & 1                     \\[1ex]
+    Chemicke Listy                                                                     & 13     & 0.279   & 0.183 &  0.22      & 0.24                  \\
+    Inorganic Chemistry                                                                & 12     & 4.82    & 1.873 &  1.36      & 0.741                 \\
+    Inorganica Chimica Acta                                                            & 11     & 1.918   & 0.584 &  1.88      & 0.664                 \\
+    Nova Biotechnologica et Chimica                                                    & 11     & 0.188   & 0.129 &  0.31      & 0.044                 \\
+    \bottomrule \\ [-2ex]
+    \multicolumn{7}{l}{\footnotesize $^\dagger$ Počet publikácií pracovníkov FPV; $^\ddagger$ CiteScore} \\
+     
+  \end{tabular}}
+
+  Zdroj Scopus a Web of Science (2000-2016)
+
+\end{frame}
 
 \begin{frame}
   \frametitle{Iné zdroje impakt faktoru}
