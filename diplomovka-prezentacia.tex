@@ -11,7 +11,7 @@
 % This work has the LPPL maintenance status `author-maintained'.
 %
 % This work consists of the following files: diplomovka-prezentacia.tex,
-% literatura.bib, opakuj.sty, ucmplainnat.bst.
+% literatura.bib, cmidrule-patch.sty opakuj.sty, ucmplainnat.bst.
 %
 % The file `ucmplainnat.bst' was derived from the `csplainnat.bst' BibTeX style
 % for Czech references style (According to CSN ISO 690) available at:
@@ -122,6 +122,10 @@
 
 % Zapnutie opakovania matematickych symbolov
 % \input{opakuj.sty}
+
+% Prikaz \cmidrule nefunguje, ak dokument pouziva slovencinu/cestinu cez babel
+% tento patch riesi tento problem
+\input{cmidrule-patch.sty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -305,7 +309,7 @@ Contents\dots
 
 \section{Výsledky a diskusia}
 
-\subsection{Vývoj publikačnej činnosti FPV}
+\subsection{Celkový počet publikácii a citácii jednotlivých katedier}
 
 %
 % Graf celkoveho poctu publikacii jednotlivých katedier
@@ -313,8 +317,6 @@ Contents\dots
 \begin{frame}{Celkový počet publikácii jednotlivých katedier FPV}
   \includegraphics[scale=0.5]{plot-results-data-papers.png}
 \end{frame}
-
-\subsection{Vývoj citovanosti publikácií FPV}
 
 %
 % Graf celkoveho poctu citacii jednotlivych katedier
@@ -337,6 +339,69 @@ Contents\dots
 %
 \begin{frame}{Medián $g$-indexu pre jednotlivé katedry FPV}
   \includegraphics[scale=0.499]{plot-results-data-g_index.png}
+\end{frame}
+
+\subsection{Porovnanie KCh FPV s gréckymi univerzitami}
+
+%
+% KCh FPV vs. katedra chemickeho inzinierstva troch greckych univerzit
+%
+\begin{frame}{Porovnanie KCh FPV s katedrami chemického inžinierstva vybraných troch gréckych univerzít}
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lccclccc}
+      \toprule
+      & \multicolumn{3}{c}{Katedra chémie FPV} & & \multicolumn{3}{c}{\citet{Kazakis2015}} \\
+      \cmidrule{2-4}\cmidrule{6-8}
+      Indikátor & Scopus & WoS & GS & & Atény & Solún & Patra \\
+      \midrule
+      $n$            & 18    & 18    & 18    & & 72    & 34    & 30    \\
+      $P$            & 1106  & 1120  & 1525  & & 4463  & 2253  & 2573  \\
+      P/A$^\dagger$  & 15.42 & 16.14 & 25.74 & & 62    & 66,3  & 85,8  \\
+      $c$            & 19248 & 19223 & 25208 & & 74368 & 39695 & 63718 \\
+      C/P$^\ddagger$ & 12,45 & 12,62 & 11,35 & & 16,7  & 17,6  & 24,8  \\
+      $\bar{h}$      & 11,78 & 11,94 & 13,61 & & 16,3  & 16,8  & 21,3  \\
+      $\sigma (h)$   & 11,70 & 11,70 & 12,99 & & 8     & 8,5   & 1,5   \\
+      $\tilde{h}$    & 7,50  & 7,50  & 9,00  & & 15,5  & 17    & 18    \\
+      $\bar{g}$      & 19,83 & 20,22 & 23,56 & & 26,8  & 28,3  & 35,5  \\
+      $\sigma (g)$   & 22,23 & 21,68 & 24,89 & & 12,6  & 13,9  & 23    \\
+      $\tilde{g}$    & 14,50 & 15,00 & 16,50 & & 26,5  & 27    & 30,5  \\
+      \bottomrule
+      \multicolumn{8}{l}{\tiny $^\dagger$ počet autorov na publikáciu; $^\ddagger$ počet citácii na publikáciu}
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+%
+% KCh FPV vs. katedra chemie vybranych piatich greckych univerzit
+%
+\begin{frame}{Porovnanie KCh FPV s katedrami chémie vybraných piatich gréckych univerzít}
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lccc}
+    \toprule
+    & \multicolumn{3}{c}{Katedra chémie FPV} \\
+    \cmidrule{2-4}
+    Indikátor & Scopus & WoS & GS \\
+    \midrule
+    $P$        & 1106   & 1120  & 1525  \\
+    $\bar{h}$  & 11,78  & 11,94 & 13,61 \\
+    \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lccccc}
+    \toprule
+    & \multicolumn{5}{c}{\citet{Lazaridis2010}} \\
+    \cmidrule{2-6}
+    Indikátor & Kréta & Patra & Solún & Ioaninna & Atény \\
+    \midrule
+    $P$        & 56    & 61    & 41    & 48       & 219   \\
+    $\bar{h}$  & 16,6  & 12,6  & 10,4  & 10,3     & 9,0   \\
+    \bottomrule
+    \end{tabular}
+  \end{table}
 \end{frame}
 
 \subsection{Časopisy s najväčším počtom publikácii z FPV}
