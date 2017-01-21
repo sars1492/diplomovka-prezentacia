@@ -37,7 +37,7 @@
 
 %\documentclass[12pt,a4paper,oneside,final]{book}
 \documentclass{beamer}
-\usetheme{default} % pouzitie default temy
+\usetheme{Warsaw} % pouzitie temy Warsaw
 
 \usepackage[utf8]{inputenc}
 \usepackage[LGR,IL2]{fontenc}
@@ -59,6 +59,12 @@
 \usepackage{gfsporson} % balik pre vysadzanie greckeho textu
 \usepackage{fancyvrb}  % balik pre oramovanie verbatim prostredia
 \usepackage{tabularx}
+\usepackage{tikz}
+
+\usebackgroundtemplate{%
+  \tikz\node[opacity=0.05]{\parbox{\paperwidth}{\centering\includegraphics[height=\paperheight]{logo/UCM_(color).png}}};
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -74,18 +80,28 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\usepackage[Mgr,Farebne]{ucmthesis}   % nahrad "Farebne" za "Tlac", ked chces
-                                      % dokument tlacit; "Farebne" je len pre
-                                      % zdielanie online
-
 \graphicspath{{obr/}}                 % implicitna cesta pre umiestnenie
                                       % obrazkov v adresari 'obr'
 
 \author{Bc. Juraj Szász}
 
+\institute{\begin{tabular}{l@{\hspace{0.5em}}l}
+  \textbf{Študijný program:} & Aplikovaná biológia \\
+  \textbf{Študijný obor:}  & Biológia \\
+  \textbf{Školiace pracovisko:} & Katedra biológie \\
+  \textbf{Školiteľ:} & prof. RNDr. Ján Kraic, PhD \\
+\end{tabular}
+ \\ \vspace{10pt} \textcolor{blue}{Fakulta prírodných vied} \\ \textcolor{blue}{\textbf{Univerzita sv.\,Cyrila a Metoda v Trnave}}}
+
+
 \title{Scientometrická analýza FPV~UCM v~Trnave}
 
-\date{\today}
+\subtitle{Diplomová práca}
+
+\date{25.\,januára 2017}
+
+\setbeamercovered{transparent}
+
 
 %\NazovKatedry{Katedra biológie}{Department of Biology}
 
@@ -202,16 +218,226 @@
 
 \frame{\tableofcontents}
 
+
+\section[Úvod]{Úvod}
+
+\subsection{Definícia scientometrie}
+
+
 \begin{frame}
+\frametitle{Čo je scientometria?}
+
+\begin{block}{Definícia scientometrie}
+Scientometria je....
+\end{block}
+
+\end{frame}
+
+\subsection{Citačné registre (Scopus, Web of Science, Google Scholar)}
+
+\begin{frame}
+\frametitle{Scopus}
+
+Contents\dots
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Web of Science}
+
+Contents\dots
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Google Scholar}
+
+
+Contents\dots
+
+
+\end{frame}
+
+
+\subsection{Citačné indikátory}
+
+\begin{frame}
+\frametitle{Prehľad citačných indikátorov}
+
+
+Contents\dots
+
+
+\end{frame}
+
+\section{Ciele práce}
+
+\begin{frame}
+\frametitle{Ciele práce}
+
+\begin{enumerate}
+\item<1-> Získať bibliografické záznamy všetkých publikácií každého vedeckého
+  pracovníka, ktorý je uvedený na stránkach fakulty FPV UCM v Trnave a na
+  stránkach príslušných katedier.
+\item<2-> Získať bibliografické záznamy pre práce, v ktorých má aspoň jeden
+  spoluautor príslušnosť FPV UCM v Trnave.
+\item<3-> Urobiť citačnú analýzu vedeckých publikácií pracovníkov FPV UCM v
+  Trnave.
+\item<4-> Rozdeliť citačné analýzy jednotlivých pracovníkov podľa príslušnosti
+  ku katedrám a vytvoriť sumárne citačné analýzy pre každú katedru.
+\item<5-> Graficky zhodnotiť a porovnať výsledok citačných analýz pre každu
+  katedru a graficky zhodnotiť vývoj publikačnej činnosti FPV UCM v Trnave.
+\end{enumerate}
+
+\end{frame}
+
+
+\section{Materiály a metódy}
+
+\subsection{Získavanie dát}
+
+\begin{frame}
+\frametitle{Scopus}
+
+Contents\dots
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Web of Science}
+
+Contents\dots
+
+
+\end{frame}
+
+\subsection{Analýza pracovníkov}
+
+\begin{frame}
+\frametitle{Zoznam pracovníkov}
+
+Contents\dots
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Chýbajúce dáta}
+
+Contents\dots
+
+
+\end{frame}
+
+
+\subsection{Program Publish or Perish}
+
+\begin{frame}
+\frametitle{Program Publish or Perish}
+
+
+Contents\dots
+
+
+\end{frame}
+
+
+\subsection{Vlastné programy na spracovanie dát}
+
+\begin{frame}
+\frametitle{Vlastné programy na spracovanie dát}
+
+\begin{block}{scientometry-data-proc}
+
+Contents\dots
+
+\end{block}
+
+\begin{block}{scientometry-plot-gen}
+
+Contents\dots
+
+\end{block}
+
+\end{frame}
+
+
+\section{Výsledky a diskusia}
+
+\subsection{Vývoj publikačnej činnosti FPV}
+
+
+\begin{frame}
+
+
+Contents\dots
+
+
+\end{frame}
+
+
+\subsection{Vývoj citovanosti publikácii FPV}
+
+
+\begin{frame}
+
+
+Contents\dots
+
+
+\end{frame}
+
+
+\subsection{Tabuľka publikácii}
+
+
+\begin{frame}
+
+
+Contents\dots
+
+
+\end{frame}
+
+
+\section{Záver}
+
+\begin{frame}
+\frametitle{Záver}
+
+\begin{itemize}
+\item<1-> Z technických dôvodov sme do analýz nezahrnuli odstránenie
+  autocitácií.
+\item<2-> Práca nezahŕňa výpočet spoluatorských sietí, pretože by tak presiahla
+  predpísaný rozsah.
+\item<3-> I napriek sa nám v rámci možností podarilo splniť stanovené ciele.
+\item<4-> Táto práca tak predstavuje prvú komplexnejšiu scientometrickú analýzu
+  FPV UCM v Trnave a môže sa stať užitočným podkladom pre ďaľšie práce tohto
+  typu.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[plain]
+  \begin{center}
+    \Huge Ďakujem za pozornosť!
+    \vfill
+    \Large Juraj Szász
+  \end{center}
+\end{frame}
+
+\begin{frame}[plain]
   \frametitle{Iné zdroje impakt faktoru}
   \begin{table}
     \small\centering
     \begin{tabular}{lccl}
       \toprule
-      Časopis & ISI JIF & IF & zdroj \\
+      Časopis & ISI JIF & IF & Zdroj \\
       \midrule
       Polish Journal of Env. Studies  & 0,79  & 0,71           & Research Gate$^{\mathrm{a}}$ \\[0.5ex]
-      Pharmazie                       & 1.264 & 1,32           & Research Gate$^{\mathrm{b}}$ \\[0.5ex]
+      Pharmazie                       & 1,264 & 1,32           & Research Gate$^{\mathrm{b}}$ \\[0.5ex]
       Applied Mechanics and Materials & --    & 0,16           & Research Gate$^{\mathrm{c}}$ \\[0.5ex]
       Advanced Materials Research     & --    & 0,23           & Research Gate$^{\mathrm{d}}$ \\[0.5ex]
       Nova Biotechnologica et Chimica & --    & 0,188$^\dagger$ & De Gruyter$^{\mathrm{e}}$    \\[0.5ex]
