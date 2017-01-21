@@ -1,4 +1,4 @@
-%% prezentacia.tex
+%% diplomovka-prezentacia.tex
 %% Copyright 2016, 2017 Juraj Szasz <juraj.szasz3@gmail.com>
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
@@ -10,10 +10,8 @@
 %
 % This work has the LPPL maintenance status `author-maintained'.
 %
-% This work consists of the following files: diplomovka.tex, 01-uvod.tex,
-% 02-symboly.tex, 03-kapitola1.tex, 04-kapitola2.tex, 05-kapitola3.tex,
-% 06-zaver.tex, 07-priloha.tex, literatura.bib, opakuj.sty, ucmthesis.sty and
-% ucmplainnat.bst.
+% This work consists of the following files: diplomovka-prezentacia.tex,
+% literatura.bib, opakuj.sty, ucmplainnat.bst.
 %
 % The file `ucmplainnat.bst' was derived from the `csplainnat.bst' BibTeX style
 % for Czech references style (According to CSN ISO 690) available at:
@@ -25,7 +23,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
-%%  Sablona Bc+Mgr+RNDr pre FPV UCM
+%%  Sablona pre prezentaciu na obhajobu diplomovych prac
 %%  Autor: Juraj Szasz (juraj.szasz3@gmail.com)
 %%
 %%  Zalozene na sablone PriF MU v Brne
@@ -35,32 +33,23 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[12pt,a4paper,oneside,final]{book}
 \documentclass{beamer}
-\usetheme{Warsaw} % pouzitie temy Warsaw
+\usetheme{Warsaw}      % pouzitie temy Warsaw
 
 \usepackage[utf8]{inputenc}
-\usepackage[LGR,IL2]{fontenc}
+\usepackage[IL2]{fontenc}
 \usepackage[english,slovak]{babel} % posledny jazyk v zozname je implicitny
 
-\usepackage{mathptmx}  % volne dostupny font Adobe Times Roman
-
-\usepackage{longtable} % balik pre tabulky presahujuce jednu stranu
-                       % (potrebne pre zoznam znaceni)
-
 \usepackage{booktabs}  % balík pre vysadzanie profesionalnych tabuliek
-
-% balik pre postranne popisky obrazkov a tabuliek
-\usepackage[leftcaption,ragged]{sidecap}
 
 \usepackage{amsmath,amssymb,amsthm} % baliky pre matematicke vzorce
 \usepackage{natbib}    % balik pre harvardsky styl citacii
 
-\usepackage{gfsporson} % balik pre vysadzanie greckeho textu
-\usepackage{fancyvrb}  % balik pre oramovanie verbatim prostredia
-\usepackage{tabularx}
-\usepackage{tikz}
+\usepackage{tikz}      % balik pre zmenu opacity objektov
+\usepackage{color, colortbl} % balik pre definiciu vlastnych farieb
+\definecolor{LRed}{rgb}{1,.8,.8}
 
+% Nastavenie obrazku na pozadi
 \usebackgroundtemplate{%
   \tikz\node[opacity=0.05]{\parbox{\paperwidth}{\centering\includegraphics[height=\paperheight]{logo/UCM_(color).png}}};
 }
@@ -83,57 +72,28 @@
 \graphicspath{{obr/}}                 % implicitna cesta pre umiestnenie
                                       % obrazkov v adresari 'obr'
 
-\author{Bc. Juraj Szász}
+\author{Bc. Juraj Szász}              % autor
 
+% Afiliacia a dodatocne info na titulny slajd
 \institute{\begin{tabular}{l@{\hspace{0.5em}}l}
   \textbf{Študijný program:} & Aplikovaná biológia \\
   \textbf{Študijný obor:}  & Biológia \\
   \textbf{Školiace pracovisko:} & Katedra biológie \\
   \textbf{Školiteľ:} & prof. RNDr. Ján Kraic, PhD \\
-\end{tabular}
- \\ \vspace{10pt} \textcolor{blue}{Fakulta prírodných vied} \\ \textcolor{blue}{\textbf{Univerzita sv.\,Cyrila a Metoda v Trnave}}}
+ \end{tabular}
+ \\ \vspace{10pt}  \textcolor{blue}{Fakulta prírodných vied} \\
+ \textcolor{blue}{\textbf{Univerzita sv.\,Cyrila a Metoda v Trnave}}}
 
-
+% Nazov prezentacie
 \title{Scientometrická analýza FPV~UCM v~Trnave}
 
+% Podtitulok prezentacie
 \subtitle{Diplomová práca}
 
+% Datum
 \date{25.\,januára 2017}
 
 \setbeamercovered{transparent}
-
-
-%\NazovKatedry{Katedra biológie}{Department of Biology}
-
-%\MiestoRieseniaPrace{Trnava}{Trnava}
-
-%\AkademickyRok{2016/2017}
-
-%\SkolitelSTitulmi{prof. RNDr. Ján Kraic, PhD}
-
-%\StudijnyProgram{Aplikovaná biológia}{Aplicated Biology}
-
-%\StudijnyObor{Biológia}{Biology}
-
-
-%\TextAbstraktov{Scientometrická analýza slúži na kvalitatívne a~kvantitatívne
-% hodnotenie vedeckej práce.  Vykonáva sa pomocou štatistickej analýzy
-% publikačnej činnosti jednotlivých pracovníkov, inštitúcií a~dokonca celých
-% krajín.  Kvalitu vedeckých publikácií určuje množstvo citácií (odkazov) na
-% publikácie.  Viac citácií na článok vyjadruje jeho popularitu, kvalitu
-% a~prínos pre vedecký pokrok.  Cieľom tejto práce je kvalitatítne
-% a~kvantitatívne zhodnotiť publikačnú činnosť pracovníkov Fakulty prírodných
-% vied Univerzity sv.\,Cyrila a Metoda v~Trnave za~obdobie 2000--2016.}{The
-% purpose of scientometric analysis is to provide qualitative and quantitative
-% evaluation of the scientific work.  It is being performed by statistical
-% analysis of the publishing activity---addressing individual researchers,
-% institutions or even whole countries.  The quality of a scientific publication
-% is derived from the number of citations.  The amount of references to a paper
-% determines its popularity, quality and its impact on scientific progress.  The
-% goal of this thesis is to carry out qualitative and quantitative analysis of
-% the publishing activity of the academic staff members affiliated to Faculty of
-% Natural Science, University of Ss.\,Cyril and Methodeus in Trnava during
-% 2000--2016.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -141,10 +101,6 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \newcommand{\Cbb}{\mathbb{C}}
-% \newcommand{\Rbb}{\mathbb{R}}
-% \newcommand{\Zbb}{\mathbb{Z}}
-% \newcommand{\Nbb}{\mathbb{N}}
 \newcommand{\tm}{\texttrademark}
 \newcommand{\R}{\textsuperscript{\textregistered}}
 
@@ -164,9 +120,6 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Vytvori pomocny subor pre register
-%\makeindex
-
 % Zapnutie opakovania matematickych symbolov
 % \input{opakuj.sty}
 
@@ -176,46 +129,17 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% [0] Názov školy, fakulty, práce... to isté ako na prvej strany diplomovky
-% [1] Obsah
-% [2] Čo je to scientometria? nejaky funny obrázok.
-% [2.1] Čo je to scientometria? definícia
-% [2.2] Čo je to scientometria? obrázok rozdelenia informetrie
-% [3.1] Scopus: fakty o veľkosti a rozdelení
-% [3.2] Scopus: screenshot
-% [4.1] Web of Science: fakty o veľkosti a rozdelení
-% [4.2] Web of Science: screenshot
-% [5.1] Google Scholar: nejaké fakty
-% [5.2] Google Scholar: screenshot
-% [5.3] Google Scholar: príklad chýb
-% [6] Citačné indikátory tabuľka
-% [7.0] Praktická časť: Datamining nejaký funny obrazok
-% [7.1.1] Scopus: dopyt
-% [7.1.2] Scopus: screenshot
-% [7.2.1] Web of Science: dopyt
-% [7.2.2] Web of Science: screenshot
-% [7.3.1] Analýza pracovníkov: zoznam pracovníkov
-% [7.3.2] Analýza pracovníkov chýbajúce dáta
-% [7.4.1] Program Publish or Perish: nejaké info
-% [7.4.2] Program Publish or Perish: screenshot
-% [7.5.1] Skripty na spracovanie dát: nejaké info
-% [8] Výsledky: nejaký funny obrázok
-% [8.1] Výsledky: Vývoj publikačnej činnosti FPV
-% [8.2] Výsledky: Vývoj citovanisti publikácií FPV
-% [8.3] Výsledky: 1. strana tabuľky publikácií
-% [8.4.1]--[8.4.16] Výsledky grafy v poradí, akom sú v diplomovke
-% [9] Záver posledný odstavec práce
-% [10] Ďakujem za pozornosť. Diskusia a nejaký funny obrázok (napr. PhD comics)
-% [11] Použitá literatúra
-
 \begin{document}
 
 %%
-%%  Uvodna strana
+%%  Titulny slajd
 %%
-
 \frame{\maketitle}
 
+
+%%
+%%  Osnova
+%%
 \frame{\tableofcontents}
 
 
@@ -223,72 +147,96 @@
 
 \subsection{Definícia scientometrie}
 
-
-\begin{frame}
-\frametitle{Čo je scientometria?}
-
-\begin{block}{Definícia scientometrie}
-Scientometria je....
-\end{block}
-
+%
+%  Definicia scientometrie
+%
+\begin{frame}{Čo je scientometria?}
+  \begin{block}{Definícia scientometrie}
+    Scientometria je hodnotenie vedy (publikácií, pracovníkov, inštitúcií, až
+    krajín) použitím matematických a štatistickým metód \citep{Vinkler2001}.
+  \end{block}
+  \begin{itemize}
+    \item Základ hodnotenia tvorí počet referencií na publikáciu tzv. citácie.
+      Pričom táto hodnota predstavuje impakt (dopad) daného dokumentu na vedu,
+      teda kvalitu \citep{Vavrikova2008}.
+    \item V scientometrie sa môže hodnotiť aj ekonomický aspekt vedeckého
+      výskumu (napr. financovanie inštitúcií a grantov), ale väčšiu váhu má
+      hodnote nie na základe citácií, pretože financovanie samo o sebe nič
+      nehovorí o dopade daného objavu \citep{Bellis2009}.
+  \end{itemize}
 \end{frame}
+
 
 \subsection{Citačné registre (Scopus, Web of Science, Google Scholar)}
 
-\begin{frame}
-\frametitle{Scopus}
-
-Contents\dots
-
+%
+% Citačné registre: Scopus
+%
+\begin{frame}{Scopus}
+  Contents\dots
 \end{frame}
 
-\begin{frame}
-\frametitle{Web of Science}
-
-Contents\dots
-
+%
+% Citačné registre: Web of Science
+%
+\begin{frame}{Web of Science}
+  Contents\dots
 \end{frame}
 
-\begin{frame}
-\frametitle{Google Scholar}
-
-
-Contents\dots
-
-
+%
+% Citačné registre: Google Scholar
+%
+\begin{frame}{Google Scholar}
+  Contents\dots
 \end{frame}
 
 
 \subsection{Citačné indikátory}
 
-\begin{frame}
-\frametitle{Prehľad citačných indikátorov}
-
-
-Contents\dots
-
-
+%
+% Prehlad citacnych indikatorov
+%
+\begin{frame}{Prehľad citačných indikátorov}
+  \begin{table}
+    \centering\footnotesize
+    \begin{tabular}{llcr}
+      \toprule
+      slovenský názov & anglický názov & skratka & kap. \\
+      \midrule
+      \rowcolor{LRed} impakt faktor                 & \emph{Journal Impact Factor}    & IF        & 1.5.1 \\[0.5ex]
+      \rowcolor{LRed} SciMago rang časopisu         & \emph{SciMago Journal Rank}     & SJR       & 1.5.2 \\[0.5ex]
+      \rowcolor{LRed} CiteScore$^\dagger$            & \emph{CiteScore}                & CS        & 1.5.3 \\[0.5ex]
+      \rowcolor{LRed} normalizovaný impakt časopisu & \emph{Source normalized impact} & SNIP      & 1.5.4 \\[-0.25ex]
+      \rowcolor{LRed} na dokument                   & \emph{per paper}                &           &       \\[0.5ex]
+      Hirschov index                                & \emph{Hirsh's index}            & $h$-index & 1.6.1 \\[1.5ex]
+      Eggheov index                                 & \emph{Egghe's index}            & $g$-index & 1.6.2 \\[0.5ex]
+      \bottomrule
+      \multicolumn{4}{l}{\tiny {\color{red} červenou farbou} sú označené citačné indikátory na hodnotenie časopisov} \\
+      \multicolumn{4}{l}{\tiny $^\dagger$ indikátory, ktorých názov sa neprekladá so slovenčiny}
+    \end{tabular}
+  \end{table}
 \end{frame}
+
 
 \section{Ciele práce}
 
-\begin{frame}
-\frametitle{Ciele práce}
-
-\begin{enumerate}
-\item<1-> Získať bibliografické záznamy všetkých publikácií každého vedeckého
-  pracovníka, ktorý je uvedený na stránkach fakulty FPV UCM v Trnave a na
-  stránkach príslušných katedier.
-\item<2-> Získať bibliografické záznamy pre práce, v ktorých má aspoň jeden
-  spoluautor príslušnosť FPV UCM v Trnave.
-\item<3-> Urobiť citačnú analýzu vedeckých publikácií pracovníkov FPV UCM v
-  Trnave.
-\item<4-> Rozdeliť citačné analýzy jednotlivých pracovníkov podľa príslušnosti
-  ku katedrám a vytvoriť sumárne citačné analýzy pre každú katedru.
-\item<5-> Graficky zhodnotiť a porovnať výsledok citačných analýz pre každu
-  katedru a graficky zhodnotiť vývoj publikačnej činnosti FPV UCM v Trnave.
-\end{enumerate}
-
+%%
+%% Ciele prace
+%%
+\begin{frame}{Ciele práce}
+  \begin{enumerate}
+  \item<1-> Získať bibliografické záznamy všetkých publikácií každého vedeckého
+    pracovníka, ktorý je uvedený na stránkach fakulty FPV UCM v Trnave a na
+    stránkach príslušných katedier.
+  \item<2-> Získať bibliografické záznamy pre práce, v ktorých má aspoň jeden
+    spoluautor príslušnosť FPV UCM v Trnave.
+  \item<3-> Urobiť citačnú analýzu vedeckých publikácií pracovníkov FPV UCM v
+    Trnave.
+  \item<4-> Rozdeliť citačné analýzy jednotlivých pracovníkov podľa príslušnosti
+    ku katedrám a vytvoriť sumárne citačné analýzy pre každú katedru.
+  \item<5-> Graficky zhodnotiť a porovnať výsledok citačných analýz pre každu
+    katedru a graficky zhodnotiť vývoj publikačnej činnosti FPV UCM v Trnave.
+  \end{enumerate}
 \end{frame}
 
 
@@ -296,70 +244,62 @@ Contents\dots
 
 \subsection{Získavanie dát}
 
-\begin{frame}
-\frametitle{Scopus}
-
-Contents\dots
-
-
+%
+% Ziskavanie dat: Scopus
+%
+\begin{frame}{Scopus}
+  Contents\dots
 \end{frame}
 
-\begin{frame}
-\frametitle{Web of Science}
-
-Contents\dots
-
-
+%
+% Ziskavanie dat: Web of Sciencee
+%
+\begin{frame}{Web of Science}
+  Contents\dots
 \end{frame}
+
 
 \subsection{Analýza pracovníkov}
 
-\begin{frame}
-\frametitle{Zoznam pracovníkov}
-
-Contents\dots
-
-
+%
+% Analyza pracovnikov: Zoznam pracovnikov
+%
+\begin{frame}{Zoznam pracovníkov}
+  Contents\dots
 \end{frame}
 
-\begin{frame}
-\frametitle{Chýbajúce dáta}
-
+%
+% Analyza pracovnikov: Chybajuce data
+%
+\begin{frame}{Chýbajúce dáta}
 Contents\dots
-
-
 \end{frame}
 
 
 \subsection{Program Publish or Perish}
 
-\begin{frame}
-\frametitle{Program Publish or Perish}
-
-
-Contents\dots
-
-
+%
+% Screenshot programu Publish or Perish
+%
+\begin{frame}{Program Publish or Perish}
+  \includegraphics[scale=0.255]{publish-or-perish_wine.png} \\[-1ex]
+  \parbox{\textwidth}{\centering\tiny \citet{Harzing2011}}
 \end{frame}
 
 
 \subsection{Vlastné programy na spracovanie dát}
 
-\begin{frame}
-\frametitle{Vlastné programy na spracovanie dát}
+%
+% Popis vlastnych programov na spracovanie dat
+%
+\begin{frame}{Vlastné programy na spracovanie dát}
+  \begin{block}{scientometry-data-proc}
+    Contents\dots
+  \end{block}
 
-\begin{block}{scientometry-data-proc}
-
-Contents\dots
-
-\end{block}
-
-\begin{block}{scientometry-plot-gen}
-
-Contents\dots
-
-\end{block}
-
+  \begin{block}{scientometry-plot-gen}
+    Contents\dots
+  \end{block}
 \end{frame}
 
 
@@ -367,60 +307,96 @@ Contents\dots
 
 \subsection{Vývoj publikačnej činnosti FPV}
 
+%
+% Graf celkoveho poctu publikacii jednotlivých katedier
+%
+\begin{frame}{Celkový počet publikácii jednotlivých katedier FPV}
+  \includegraphics[scale=0.5]{plot-results-data-papers.png}
+\end{frame}
 
-\begin{frame}
+\subsection{Vývoj citovanosti publikácií FPV}
 
-
-Contents\dots
-
-
+%
+% Graf celkoveho poctu citacii jednotlivych katedier
+%
+\begin{frame}{Celkový počet citácií jednotlivých katedier FPV}
+  \includegraphics[scale=0.5]{plot-results-data-citations.png}
 \end{frame}
 
 
-\subsection{Vývoj citovanosti publikácii FPV}
-
-
-\begin{frame}
-
-
-Contents\dots
-
-
+\subsection{Medián vybraných citačných indikátorov pre jednotlivé katedry}
+%
+% Graf h-indexu pre jednotlive katedry
+%
+\begin{frame}{Medián $h$-indexu pre jednotlivé katedry FPV}
+  \includegraphics[scale=0.5]{plot-results-data-h_index.png}
 \end{frame}
 
+%
+% Graf g-indexu pre jednotlive katedry
+%
+\begin{frame}{Medián $g$-indexu pre jednotlivé katedry FPV}
+  \includegraphics[scale=0.499]{plot-results-data-g_index.png}
+\end{frame}
 
-\subsection{Tabuľka publikácii}
+\subsection{Časopisy s najväčším počtom publikácii z FPV}
 
-
-\begin{frame}
-
-
-Contents\dots
-
-
+%
+% Tabulka casopisov s najvacsim poctom publikacii
+%
+\begin{frame}{Svetové časopisy s najväčším počtom publikácii z FPV}
+\begin{table}
+  {\footnotesize
+  \begin{tabular}{lccccc}
+    \toprule
+     Názov časopisu & $n^\dagger$ & IF & SJR  & CS$^\ddagger$ & SNIP \\
+    \midrule
+    Chemical Papers                 & 25 & 1,326 & 0,382 & 1,36 & 0,56  \\
+    Polyhedron                      & 22 & 2,108 & 0,592 & 2,02 & 0,777 \\
+    Biologia                        & 15 & 1,10  & 0,322 & 0,88 & 0,88  \\
+    Cereal Research Communications  & 14 & 0,528 & 0,305 & 0,62 & 0,515 \\
+    Dalton Transactions             & 14 & 4,177 & 1,404 & 4,1  & 1     \\[1ex]
+    Chemicke Listy                  & 13 & 0,279 & 0,183 & 0,22 & 0,24  \\
+    Inorganic Chemistry             & 12 & 4,82  & 1,873 & 1,36 & 0,741 \\
+    Inorganica Chimica Acta         & 11 & 1,918 & 0,584 & 1,88 & 0,664 \\
+    Nova Biotechnologica et Chimica & 11 & 0,188 & 0,129 & 0,31 & 0,044 \\
+    \bottomrule \\[-2ex]
+    \multicolumn{6}{l}{\tiny $^\dagger$ Počet publikácií pracovníkov FPV; $^\ddagger$ CiteScore} \\
+  \end{tabular}}
+\end{table}
+\parbox{\textwidth}{\centering\tiny Zdroj: Scopus a Web of Science (2000-2016)}
 \end{frame}
 
 
 \section{Záver}
 
-\begin{frame}
-\frametitle{Záver}
-
-\begin{itemize}
-\item<1-> Z technických dôvodov sme do analýz nezahrnuli odstránenie
-  autocitácií.
-\item<2-> Práca nezahŕňa výpočet spoluatorských sietí, pretože by tak presiahla
-  predpísaný rozsah.
-\item<3-> I napriek sa nám v rámci možností podarilo splniť stanovené ciele.
-\item<4-> Táto práca tak predstavuje prvú komplexnejšiu scientometrickú analýzu
-  FPV UCM v Trnave a môže sa stať užitočným podkladom pre ďaľšie práce tohto
-  typu.
-\end{itemize}
-
+%%
+%% Zaver
+%%
+\begin{frame}{Záver}
+  \begin{itemize}
+  \item<1-> Z technických dôvodov sme do analýz nezahrnuli odstránenie
+    autocitácií.
+  \item<2-> Práca nezahŕňa výpočet spoluatorských sietí, pretože by tak
+    presiahla predpísaný rozsah.
+  \item<3-> I napriek sa nám v rámci možností podarilo splniť stanovené ciele.
+  \item<4-> Táto práca tak predstavuje prvú komplexnejšiu scientometrickú
+    analýzu FPV UCM v Trnave a môže sa stať užitočným podkladom pre ďaľšie práce
+    tohto typu.
+  \end{itemize}
 \end{frame}
 
+% ------------------------------------------------------------------------------
 
-\begin{frame}[plain]
+%%
+%% Dodatky
+%%
+\appendix
+
+%
+% Podakovanie
+%
+\begin{frame}
   \begin{center}
     \Huge Ďakujem za pozornosť!
     \vfill
@@ -428,20 +404,34 @@ Contents\dots
   \end{center}
 \end{frame}
 
-\begin{frame}[plain]
-  \frametitle{Iné zdroje impakt faktoru}
+%
+% Zoznam literatury
+%
+\begin{frame}[t, allowframebreaks]
+  \frametitle{Zoznam literatúry}
+  \bibliography{literatura}{}
+\end{frame}
+
+%
+% Reakcie na otazky oponenta
+%
+\section{Reakcia na otázky oponenta}
+
+\subsection{Iné zdroje impakt faktoru}
+
+\begin{frame}{Iné zdroje impakt faktoru}
   \begin{table}
-    \small\centering
+    \centering\footnotesize
     \begin{tabular}{lccl}
       \toprule
       Časopis & ISI JIF & IF & Zdroj \\
       \midrule
-      Polish Journal of Env. Studies  & 0,79  & 0,71           & Research Gate$^{\mathrm{a}}$ \\[0.5ex]
-      Pharmazie                       & 1,264 & 1,32           & Research Gate$^{\mathrm{b}}$ \\[0.5ex]
-      Applied Mechanics and Materials & --    & 0,16           & Research Gate$^{\mathrm{c}}$ \\[0.5ex]
-      Advanced Materials Research     & --    & 0,23           & Research Gate$^{\mathrm{d}}$ \\[0.5ex]
-      Nova Biotechnologica et Chimica & --    & 0,188$^\dagger$ & De Gruyter$^{\mathrm{e}}$    \\[0.5ex]
-      Comm. in Comp. and Inf. Science & --    & 0,35           & Research Gate$^{\mathrm{f}}$ \\[0.5ex]
+      Polish Journal of Enviromental Studies   & 0,79  & 0,71           & Research Gate$^{\mathrm{a}}$ \\[0.5ex]
+      Pharmazie                                & 1,264 & 1,32           & Research Gate$^{\mathrm{b}}$ \\[0.5ex]
+      Applied Mechanics and Materials          & --    & 0,16           & Research Gate$^{\mathrm{c}}$ \\[0.5ex]
+      Advanced Materials Research              & --    & 0,23           & Research Gate$^{\mathrm{d}}$ \\[0.5ex]
+      Nova Biotechnologica et Chimica          & --    & 0,188$^\dagger$ & De Gruyter$^{\mathrm{e}}$    \\[0.5ex]
+      Communications in Comp. and Inf. Science & --    & 0,35           & Research Gate$^{\mathrm{f}}$ \\[0.5ex]
       \bottomrule
       \multicolumn{4}{l}{\tiny $^\dagger$ Hodnota nie je impakt faktor, ale impakt na publikáciu (IPP)} \\
       \multicolumn{4}{l}{\tiny $^{\mathrm{a}}$ \url{https://www.researchgate.net/journal/1230-1485\_Polish\_Journal\_of\_Environmental\_Studies}} \\
@@ -453,13 +443,5 @@ Contents\dots
     \end{tabular}
   \end{table}
 \end{frame}
-
-%%
-%%  Zoznam pouzitej literatury
-%%
-% \begin{frame}
-%   \frametitle{Zoznam literatúry}
-% \bibliography{literatura}{}
-% \end{frame}
 
 \end{document}

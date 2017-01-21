@@ -11,6 +11,6 @@ $recorder = 1;                   # Enable dependency recorder
 $pdf_mode = 1;                   # Run pdflatex instead of latex
 
 $pdf_previewer = "start evince"; # Set Evince as PDF viewer
-$clean_ext = "bbl";              # Clean also bbl file
+$clean_ext = "bbl snm nav";      # Clean also bbl, snm and nav files
 
 @default_files = ('diplomovka-prezentacia.tex');
