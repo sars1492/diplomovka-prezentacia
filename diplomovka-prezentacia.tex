@@ -37,7 +37,7 @@
 \usetheme{Warsaw}      % pouzitie temy Warsaw
 
 \usepackage[utf8]{inputenc}
-\usepackage[IL2]{fontenc}
+\usepackage[LGR,IL2]{fontenc}
 \usepackage[english,slovak]{babel} % posledny jazyk v zozname je implicitny
 
 \usepackage{booktabs}  % balík pre vysadzanie profesionalnych tabuliek
@@ -45,10 +45,14 @@
 \usepackage{amsmath,amssymb,amsthm} % baliky pre matematicke vzorce
 \usepackage{natbib}    % balik pre harvardsky styl citacii
 
+\usepackage{gfsporson} % balik pre vysadzanie greckeho textu
+
 \usepackage{tikz}      % balik pre zmenu opacity objektov
 \usepackage{color, colortbl} % balik pre definiciu vlastnych farieb
 \definecolor{LRed}{rgb}{1,.8,.8}
-\definecolor{LBlue}{rgb}{0.8,.8,1}
+\definecolor{LBlue}{rgb}{.8,.8,1}
+\definecolor{Red}{rgb}{.7,.2,.2}
+\definecolor{Blue}{rgb}{.2,.2,.7}
 
 % Nastavenie obrazku na pozadi
 \usebackgroundtemplate{%
@@ -82,8 +86,8 @@
   \textbf{Školiace pracovisko:} & Katedra biológie \\
   \textbf{Školiteľ:} & prof. RNDr. Ján Kraic, PhD \\
  \end{tabular}
- \\ \vspace{10pt}  \textcolor{blue}{Fakulta prírodných vied} \\
- \textcolor{blue}{\textbf{Univerzita sv.\,Cyrila a Metoda v Trnave}}}
+ \\ \vspace{10pt}  \textcolor{Blue}{Fakulta prírodných vied} \\
+ \textcolor{Blue}{\textbf{Univerzita sv.\,Cyrila a Metoda v Trnave}}}
 
 % Nazov prezentacie
 \title{Scientometrická analýza FPV~UCM v~Trnave}
@@ -157,17 +161,19 @@
 %
 \begin{frame}{Čo je scientometria?}
   \begin{block}{Definícia scientometrie}
-    Scientometria je hodnotenie vedy (publikácií, pracovníkov, inštitúcií, až
-    krajín) použitím matematických a štatistickým metód \citep{Vinkler2001}.
+    \textbf{Scientometria}
+    (lat.\,\emph{scientia}\,+\,gr.\,\textporson{métron}\,$\Rightarrow$\,\uv{meranie
+      vedy}) je kvantitatívne hodnotenie vedeckej práce (publikácií,
+    pracovníkov, inštitúcií a krajín) s~použitím matematických a~štatistických
+    metód \citep{Vinkler2001}.
   \end{block}
   \begin{itemize}
-    \item Základ hodnotenia tvorí počet referencií na publikáciu tzv. citácie.
-      Pričom táto hodnota predstavuje impakt (dopad) daného dokumentu na vedu,
-      teda kvalitu \citep{Vavrikova2008}.
-    \item V scientometrie sa môže hodnotiť aj ekonomický aspekt vedeckého
-      výskumu (napr. financovanie inštitúcií a grantov), ale väčšiu váhu má
-      hodnote nie na základe citácií, pretože financovanie samo o sebe nič
-      nehovorí o dopade daného objavu \citep{Bellis2009}.
+  \item Základom hodnotenia vedy sú tzv.\,\textcolor{Blue}{citácie}\,--\,počet
+    referencií na publikáciu.  Citácie reprezentujú mieru dopadu dokumentu na
+    vedu a indikujú tak jeho kvalitu \citep{Vavrikova2008}.
+  \item Scientometria môže hodnotiť aj ekonomický aspekt vedeckého výskumu, ale
+    väčšiu váhu má hodnotenie na základe citácií, pretože financovanie samo
+    o~sebe nič nehovorí o~dopade daného objavu \citep{Bellis2009}.
   \end{itemize}
 \end{frame}
 
@@ -183,8 +189,8 @@
   \setbeamercolor{block body}{use=structure,fg=black,bg=blue!20!white}
 
   \begin{block}{Scopus}
-    \textbf{Scopus\R} je online platená služba európskeho vydavateľstva
-    \emph{Elsevier} so~sídlom v~Amsterdame, Holansko. Služba funguje od
+    \textbf{Scopus\R} je platená online služba európskeho vydavateľstva
+    \emph{Elsevier} so~sídlom v~Amsterdame, Holandsko. Služba je prístupná od
     novembra 2004, ale je indexovaná retrospektívne od roku 1996.
 
   \end{block}
@@ -193,10 +199,10 @@
   \setbeamercolor{block body}{use=structure,fg=black,bg=red!20!white}
 
   \begin{block}{Web of Science}
-    \textbf{Web of Science\tm} (ďalej len WoS) je online platená služba amerického
-    Inštitútu pre vedecké informácie (ang. \emph{Institute for Scientific
-    Information}\,--\,ISI).  V~súčasnosti ju vlastní \emph{Thomson Reuters}
-    so sídlom New Yorku, USA.
+    \textbf{Web of Science\tm} (ďalej len WoS) je platená online služba
+    amerického Inštitútu pre vedecké informácie (ang. \emph{Institute for
+      Scientific Information}\,--\,ISI).  V~súčasnosti ju vlastní \emph{Thomson
+      Reuters} so sídlom New Yorku, USA.
   \end{block}
 
   \setbeamercolor{block title}{use=structure,fg=white,bg=green!75!black}
@@ -204,9 +210,10 @@
 
   \begin{block}{Google Scholar}
     \textbf{Google Scholar} (ďalej len GS) je neplatená online služba na
-    vyhľadávanie vedeckých článkov. Automaticky indentifikuje odborné
-    publikácie na internete a citácie na ne. Indexuje ich a počíta citácie pre
-    každý nájdený dokument.  Služba beží od roku 2004.
+    vyhľadávanie vedeckých článkov. Automaticky na internete indentifikuje
+    odborné publikácie a~hľadá citácie na ne.  Nájdené publikácie indexuje
+    a~počíta citácie pre každý nájdený dokument.  Služba bola spustená v roku
+    2004.
   \end{block}
 \end{frame}
 
@@ -252,7 +259,7 @@
       Hirschov index                                & \emph{Hirsh's index}            & $h$-index & 1.6.1 \\[1.5ex]
       Eggheov index                                 & \emph{Egghe's index}            & $g$-index & 1.6.2 \\[0.5ex]
       \bottomrule
-      \multicolumn{4}{l}{\tiny {\color{red} červenou farbou} sú označené citačné indikátory na hodnotenie časopisov} \\
+      \multicolumn{4}{l}{\tiny {\color{Red} červenou farbou} sú označené citačné indikátory na hodnotenie časopisov} \\
       \multicolumn{4}{l}{\tiny $^\dagger$\,indikátory, ktorých názov sa neprekladá so slovenčiny}
     \end{tabular}
   \end{table}
@@ -374,14 +381,14 @@
 %
 % Graf celkoveho poctu publikacii jednotlivých katedier
 %
-\begin{frame}{Vývoj publikačnej činnosti FPV v období 2000-2016}
+\begin{frame}{Vývoj publikačnej činnosti FPV v období 2000--2016}
   \includegraphics[scale=0.5]{plot-all-publications-data.png}
 \end{frame}
 
 %
 % Graf celkoveho poctu citacii jednotlivych katedier
 %
-\begin{frame}{Citovanosť publikácií FPV v období 2000-2016}
+\begin{frame}{Citovanosť publikácií FPV v období 2000--2016}
   \includegraphics[scale=0.5]{plot-all-citations-data.png}
 \end{frame}
 
@@ -475,7 +482,7 @@
     \footnotesize
     \begin{tabular}{lc@{}lcccc}
       \toprule
-      Názov časopisu & $n$&$^{\dagger\ast}$ & IF\,$^{\mathrm{a}}$  & CS\,$^{\mathrm{b}}$            & SJR\,$^{\mathrm{c}}$   & SNIP\,$^{\mathrm{d}}$ \\
+      Názov časopisu & $n$&$^{\dagger}$ & IF\,$^{\mathrm{a}}$  & CS\,$^{\mathrm{b}}$ & SJR\,$^{\mathrm{c}}$ & SNIP\,$^{\mathrm{d}}$ \\
       \midrule
       Chemical Papers                 & 25& & 1,326            & 1,36          & 0,382 & 0,56\phantom{0} \\
       Polyhedron                      & 22& & 2,108            & 2,02          & 0,592 & 0,777           \\
@@ -487,12 +494,11 @@
       Inorganica Chimica Acta         & 11& & 1,918            & 1,88          & 0,584 & 0,664           \\
       Nova Biotechnologica et Chimica & 11& & 0,188            & 0,31          & 0,129 & 0,044           \\
       \bottomrule
-      \multicolumn{7}{l}{\tiny $^\dagger$\,počet publikácií FPV} \\
-      \multicolumn{7}{l}{\tiny $^\ast$\,zdroj: Scopus a Web of Science (2000-2016)} \\
-      \multicolumn{7}{l}{\tiny $^{\mathrm{a}}$\,impakt faktor, zdroj: \url{http://www.scijournal.org}} \\
-      \multicolumn{7}{l}{\tiny $^{\mathrm{b}}$\,CiteScore, zdroj: \url{https://journalmetrics.scopus.com}} \\
-      \multicolumn{7}{l}{\tiny $^{\mathrm{c}}$\,SciMago rang časopisu, zdroj: \url{http://www.scimagojr.com}} \\
-      \multicolumn{7}{l}{\tiny $^{\mathrm{d}}$\,normalizovaný impakt časopisu na dokument, zdroj: \url{http://www.scimagojr.com}} \\
+      \multicolumn{7}{l}{\tiny $^\dagger$\,počet publikácií pracovníkov FPV\,--\,zdroj: Scopus a Web of Science (2000--2016)} \\
+      \multicolumn{7}{l}{\tiny $^{\mathrm{a}}$\,impakt faktor\,--\,zdroj: \url{http://www.scijournal.org}} \\
+      \multicolumn{7}{l}{\tiny $^{\mathrm{b}}$\,CiteScore\,--\,zdroj: \url{https://journalmetrics.scopus.com}} \\
+      \multicolumn{7}{l}{\tiny $^{\mathrm{c}}$\,SciMago rang časopisu\,--\,zdroj: \url{http://www.scimagojr.com}} \\
+      \multicolumn{7}{l}{\tiny $^{\mathrm{d}}$\,normalizovaný impakt časopisu na dokument\,--\,zdroj: \url{http://www.scimagojr.com}} \\
     \end{tabular}
   \end{table}
 \end{frame}
@@ -556,14 +562,14 @@
       \toprule
       Časopis & ISI JIF & IF &  & Zdroj \\
       \midrule
-      Polish Journal of Enviromental Studies   & 0,79\phantom{0} & 0,71\phantom{0}&           & Research Gate\,$^{\mathrm{a}}$ \\[0.5ex]
-      Pharmazie                                & 1,264           & 1,32\phantom{0}&           & Research Gate\,$^{\mathrm{b}}$ \\[0.5ex]
-      Applied Mechanics and Materials          & --              & 0,16\phantom{0}&           & Research Gate\,$^{\mathrm{c}}$ \\[0.5ex]
-      Advanced Materials Research              & --              & 0,23\phantom{0}&           & Research Gate\,$^{\mathrm{d}}$ \\[0.5ex]
-      Nova Biotechnologica et Chimica          & --              & 0,188          &$^\dagger$ & De Gruyter\,$^{\mathrm{e}}$    \\[0.5ex]
-      Communications in Comp. and Inf. Science & --              & 0,35\phantom{0}&           & Research Gate\,$^{\mathrm{f}}$ \\[0.5ex]
+      Polish Journal of Enviromental Studies   & 0,79\phantom{0} &        0,71\phantom{0}&           & Research Gate\,$^{\mathrm{a}}$ \\[0.5ex]
+      Pharmazie                                & 1,264           &        1,32\phantom{0}&           & Research Gate\,$^{\mathrm{b}}$ \\[0.5ex]
+      Applied Mechanics and Materials          & --              &        0,16\phantom{0}&           & Research Gate\,$^{\mathrm{c}}$ \\[0.5ex]
+      Advanced Materials Research              & --              &        0,23\phantom{0}&           & Research Gate\,$^{\mathrm{d}}$ \\[0.5ex]
+      Nova Biotechnologica et Chimica          & --              & \textcolor{Red}{0,188}&$^\dagger$ & De Gruyter\,$^{\mathrm{e}}$    \\[0.5ex]
+      Communications in Comp. and Inf. Science & --              &        0,35\phantom{0}&           & Research Gate\,$^{\mathrm{f}}$ \\[0.5ex]
       \bottomrule
-      \multicolumn{5}{l}{\tiny $^\dagger$\,hodnota nie je impakt faktor, ale impakt na publikáciu (IPP)} \\
+      \multicolumn{5}{l}{\tiny $^\dagger$\,hodnota \emph{nie je} impakt faktor, ale \textcolor{Red}{impakt na publikáciu (IPP)}} \\
       \multicolumn{5}{l}{\tiny $^{\mathrm{a}}$\,\url{https://www.researchgate.net/journal/1230-1485\_Polish\_Journal\_of\_Environmental\_Studies}} \\
       \multicolumn{5}{l}{\tiny $^{\mathrm{b}}$\,\url{https://www.researchgate.net/journal/0031-7144\_Pharmazie}} \\
       \multicolumn{5}{l}{\tiny $^{\mathrm{c}}$\,\url{https://www.researchgate.net/journal/1660-9336\_Applied\_Mechanics\_and\_Materials}} \\
