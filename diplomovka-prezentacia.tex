@@ -37,13 +37,15 @@
 \usetheme{Warsaw}      % pouzitie temy Warsaw
 
 \usepackage[utf8]{inputenc}
-\usepackage[IL2]{fontenc}
+\usepackage[LGR,IL2]{fontenc}
 \usepackage[english,slovak]{babel} % posledny jazyk v zozname je implicitny
 
 \usepackage{booktabs}  % balík pre vysadzanie profesionalnych tabuliek
 
 \usepackage{amsmath,amssymb,amsthm} % baliky pre matematicke vzorce
 \usepackage{natbib}    % balik pre harvardsky styl citacii
+
+\usepackage{gfsporson} % balik pre vysadzanie greckeho textu
 
 \usepackage{tikz}      % balik pre zmenu opacity objektov
 \usepackage{color, colortbl} % balik pre definiciu vlastnych farieb
@@ -158,17 +160,19 @@
 %
 \begin{frame}{Čo je scientometria?}
   \begin{block}{Definícia scientometrie}
-    Scientometria je hodnotenie vedy (publikácií, pracovníkov, inštitúcií, až
-    krajín) použitím matematických a štatistickým metód \citep{Vinkler2001}.
+    \textbf{Scientometria}
+    (lat.\,\emph{scientia}\,+\,gr.\,\textporson{métron}\,$\Rightarrow$\,\uv{meranie
+      vedy}) je kvantitatívne hodnotenie vedeckej práce (publikácií,
+    pracovníkov, inštitúcií a krajín) s~použitím matematických a~štatistických
+    metód \citep{Vinkler2001}.
   \end{block}
   \begin{itemize}
-    \item Základ hodnotenia tvorí počet referencií na publikáciu tzv. citácie.
-      Pričom táto hodnota predstavuje impakt (dopad) daného dokumentu na vedu,
-      teda kvalitu \citep{Vavrikova2008}.
-    \item V scientometrie sa môže hodnotiť aj ekonomický aspekt vedeckého
-      výskumu (napr. financovanie inštitúcií a grantov), ale väčšiu váhu má
-      hodnote nie na základe citácií, pretože financovanie samo o sebe nič
-      nehovorí o dopade daného objavu \citep{Bellis2009}.
+  \item Základom hodnotenia vedy sú tzv.\,\textcolor{Blue}{citácie}\,--\,počet
+    referencií na publikáciu.  Citácie reprezentujú mieru dopadu dokumentu na
+    vedu a indikujú tak jeho kvalitu \citep{Vavrikova2008}.
+  \item Scientometria môže hodnotiť aj ekonomický aspekt vedeckého výskumu, ale
+    väčšiu váhu má hodnotenie na základe citácií, pretože financovanie samo
+    o~sebe nič nehovorí o~dopade daného objavu \citep{Bellis2009}.
   \end{itemize}
 \end{frame}
 
@@ -184,8 +188,8 @@
   \setbeamercolor{block body}{use=structure,fg=black,bg=blue!20!white}
 
   \begin{block}{Scopus}
-    \textbf{Scopus\R} je online platená služba európskeho vydavateľstva
-    \emph{Elsevier} so~sídlom v~Amsterdame, Holansko. Služba funguje od
+    \textbf{Scopus\R} je platená online služba európskeho vydavateľstva
+    \emph{Elsevier} so~sídlom v~Amsterdame, Holandsko. Služba je prístupná od
     novembra 2004, ale je indexovaná retrospektívne od roku 1996.
 
   \end{block}
@@ -194,10 +198,10 @@
   \setbeamercolor{block body}{use=structure,fg=black,bg=red!20!white}
 
   \begin{block}{Web of Science}
-    \textbf{Web of Science\tm} (ďalej len WoS) je online platená služba amerického
-    Inštitútu pre vedecké informácie (ang. \emph{Institute for Scientific
-    Information}\,--\,ISI).  V~súčasnosti ju vlastní \emph{Thomson Reuters}
-    so sídlom New Yorku, USA.
+    \textbf{Web of Science\tm} (ďalej len WoS) je platená online služba
+    amerického Inštitútu pre vedecké informácie (ang. \emph{Institute for
+      Scientific Information}\,--\,ISI).  V~súčasnosti ju vlastní \emph{Thomson
+      Reuters} so sídlom New Yorku, USA.
   \end{block}
 
   \setbeamercolor{block title}{use=structure,fg=white,bg=green!75!black}
@@ -205,9 +209,10 @@
 
   \begin{block}{Google Scholar}
     \textbf{Google Scholar} (ďalej len GS) je neplatená online služba na
-    vyhľadávanie vedeckých článkov. Automaticky indentifikuje odborné
-    publikácie na internete a citácie na ne. Indexuje ich a počíta citácie pre
-    každý nájdený dokument.  Služba beží od roku 2004.
+    vyhľadávanie vedeckých článkov. Automaticky na internete indentifikuje
+    odborné publikácie a~hľadá citácie na ne.  Nájdené publikácie indexuje
+    a~počíta citácie pre každý nájdený dokument.  Služba bola spustená v roku
+    2004.
   \end{block}
 \end{frame}
 
