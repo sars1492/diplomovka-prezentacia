@@ -171,7 +171,35 @@
 \end{frame}
 
 
-%\subsection{Citačné registre (Scopus, Web of Science, Google Scholar)}
+\subsection{Citačné registre (Scopus, Web of Science, Google Scholar)}
+
+%
+% Prehľad citačných registrov
+%
+\begin{frame}{Prehľad citačných registrov}
+  %\setbeamercolor{block title}{use=structure,fg=black,bg=blue!75!black}
+  %\setbeamercolor{block body}{use=structure,fg=white,bg=blue!20!white}
+  \setbeamercolor{block title}{use=structure,fg=white,bg=blue!75!black}
+  \setbeamercolor{block body}{use=structure,fg=black,bg=blue!20!white}
+
+  \begin{block}{Scopus}
+    Scopus...
+  \end{block}
+
+  \setbeamercolor{block title}{use=structure,fg=white,bg=red!75!black}
+  \setbeamercolor{block body}{use=structure,fg=black,bg=red!20!white}
+
+  \begin{block}{Web of Science}
+    Web of Science...
+  \end{block}
+
+  \setbeamercolor{block title}{use=structure,fg=white,bg=green!75!black}
+  \setbeamercolor{block body}{use=structure,fg=black,bg=green!20!white}
+
+  \begin{block}{Google Scholar}
+    Google Scholar...
+  \end{block}
+\end{frame}
 
 %
 % Citačné registre: Scopus
@@ -268,28 +296,34 @@
 %
 % Analyza pracovnikov: Zoznam pracovnikov
 %
-\begin{frame}{Rozdelenie pracovníkov do kadetier}
+\begin{frame}{Rozdelenie pracovníkov do katedier}
 
   \begin{table}
-    \centering\small
+    \centering\footnotesize
     \begin{tabular}{llc}
       \toprule%\noalign{\vspace{.3ex}}
-      Názov katedry                   & Skr.    & $n$\\%[0.3ex]
+      Názov katedry                             & Skr.    & $n^\dagger$\\%[0.3ex]
       \midrule%\noalign{\vspace{.5ex}}
-      Katedra biológie                & KB      & 13 \\%[0.5ex]
-      Katedra biotechnológií          & KBt     & 10 \\%[0.5ex]
-      Katedra chémie                  & KCh     & 18 \\%[0.5ex]
-      Katedra ekochémie               & KER     & 6 \\[-0.25ex]
-      a rádiobiológie                 &         &                                             \\ [0.5ex]
-      Kat. aplikovanej informatiky    & KAIM    & 14 \\%[-0.25ex]
-      a matematiky                    &         &                                              \\[0.5ex]
-      Katedra biofyziky               & KBf     & 6 \\%[0.5ex]
-      Katedra odbornej jazykovej      & KOIP    & 2 \\[-0.25ex]
-      prípravy                        &         &                                              \\[0.5ex]
+      Katedra biológie                          & KB      & 13$^{\mathrm{a}}$ \\%[0.5ex]
+      Katedra biotechnológií                    & KBt     & 10$^{\mathrm{b}}$ \\%[0.5ex]
+      Katedra chémie                            & KCh     & 18$^{\mathrm{c}}$ \\%[0.5ex]
+      Katedra ekochémie a rádiobiológie         & KER     & 6$^{\mathrm{d}}$ \\%[-0.25ex]
+      Kat. aplikovanej informatiky a matematiky & KAIM    & 14$^{\mathrm{e}}$ \\%[-0.25ex]
+      Katedra biofyziky                         & KBf     & 6$^{\mathrm{f}}$ \\%[0.5ex]
+      Katedra odbornej jazykovej prípravy       & KOIP    & 2$^{\mathrm{g}}$ \\%[-0.25ex]
       \bottomrule
+      \multicolumn{3}{l}{\tiny $^\dagger$ počet pracovníkov katedry} \\
+      %\tiny{$^{\mathrm{a}}$ \url{http://kb.fpv.ucm.sk/}} & \multicolumn{2}{l}{\tiny $^{\mathrm{b}}$ \url{http://katedra-biotechnologii.webnode.sk/}} \\
+      \multicolumn{3}{l}{\tiny $^{\mathrm{a}}$ \url{http://kb.fpv.ucm.sk/}} \\
+      \multicolumn{3}{l}{\tiny $^{\mathrm{b}}$ \url{http://katedra-biotechnologii.webnode.sk/}}\\
+      \multicolumn{3}{l}{\tiny $^{\mathrm{c}}$ \url{http://kchfpv.weebly.com/}} \\
+      \multicolumn{3}{l}{\tiny $^{\mathrm{d}}$ \url{http://ker.fpv.ucm.sk/}} \\
+      \multicolumn{3}{l}{\tiny $^{\mathrm{e}}$ \url{http://ki.fpv.ucm.sk/}} \\
+      \multicolumn{3}{l}{\tiny $^{\mathrm{f}}$ \url{http://fpv.ucm.sk/sk/katedra-biofyziky.html}} \\
+      \multicolumn{3}{l}{\tiny $^{\mathrm{g}}$ \url{http://kaj.fpv.ucm.sk/}} \\
     \end{tabular}
-  \end{table}
-
+  \end{table}                                  
+                                               
 
 \end{frame}
 
@@ -374,7 +408,7 @@
       \toprule
       & \multicolumn{3}{c}{Katedra chémie FPV} & & \multicolumn{3}{c}{\citet{Kazakis2015}} \\
       \cmidrule{2-4}\cmidrule{6-8}
-      Indikátor & Scopus & WoS & GS & & Atény$^{\mathrm{a}}$ & Solún$^{\mathrm{a}}$ & Patra$^{\mathrm{a}}$ \\
+      Indikátor & Scopus & WoS & GS & & Atény$^{\mathrm{a}}$ & Solún$^{\mathrm{a}}$ & Patra$^{\star}$ \\
       \midrule
       $n$            & 18    & 18    & 18    & & 72    & 34    & 30    \\
       $P$            & 1106  & 1120  & 1525  & & 4463  & 2253  & 2573  \\
@@ -388,7 +422,7 @@
       $\sigma (g)$   & 22,23 & 21,68 & 24,89 & & 12,6  & 13,9  & 23    \\
       $\tilde{g}$    & 14,50 & 15,00 & 16,50 & & 26,5  & 27    & 30,5  \\
       \bottomrule
-      \multicolumn{8}{l}{\tiny $^\dagger$ počet autorov na publikáciu; $^\ddagger$ počet citácii na publikáciu; $^{\mathrm{a}}$ zdroj: Scopus}
+      \multicolumn{8}{l}{\tiny $^\dagger$ počet autorov na publikáciu; $^\ddagger$ počet citácii na publikáciu; $^{\star}$ zdroj: Scopus}
     \end{tabular}
   \end{table}
 \end{frame}
