@@ -48,6 +48,7 @@
 \usepackage{tikz}      % balik pre zmenu opacity objektov
 \usepackage{color, colortbl} % balik pre definiciu vlastnych farieb
 \definecolor{LRed}{rgb}{1,.8,.8}
+\definecolor{LBlue}{rgb}{0.8,.8,1}
 
 % Nastavenie obrazku na pozadi
 \usebackgroundtemplate{%
@@ -182,9 +183,9 @@
   \setbeamercolor{block body}{use=structure,fg=black,bg=blue!20!white}
 
   \begin{block}{Scopus}
-    \emph{Scopus}\,\R je online platená služba európskeho vydavateľstva
+    \textbf{Scopus\R} je online platená služba európskeho vydavateľstva
     \emph{Elsevier} so~sídlom v~Amsterdame, Holansko. Služba funguje od
-    novembra 2004, ale je indexovaná retrospektívne od roku 1996. 
+    novembra 2004, ale je indexovaná retrospektívne od roku 1996.
 
   \end{block}
 
@@ -192,9 +193,9 @@
   \setbeamercolor{block body}{use=structure,fg=black,bg=red!20!white}
 
   \begin{block}{Web of Science}
-    \emph{Web of Science} (ďalej len WoS) je online platená služba amerického
-    Inštitútu pre vedecké informácie \emph{Institute for Scientific
-    Information} (ISI)  V~súčasnosti ju vlatsní \emph{Thomson Reuters} 
+    \textbf{Web of Science\tm} (ďalej len WoS) je online platená služba amerického
+    Inštitútu pre vedecké informácie (ang. \emph{Institute for Scientific
+    Information}\,--\,ISI).  V~súčasnosti ju vlastní \emph{Thomson Reuters}
     so sídlom New Yorku, USA.
   \end{block}
 
@@ -202,7 +203,7 @@
   \setbeamercolor{block body}{use=structure,fg=black,bg=green!20!white}
 
   \begin{block}{Google Scholar}
-    \emph{Google Scholar} (ďalej len GS) je neplatená online služba na
+    \textbf{Google Scholar} (ďalej len GS) je neplatená online služba na
     vyhľadávanie vedeckých článkov. Automaticky indentifikuje odborné
     publikácie a citácie na ne. Indexuje ich a počíta citácie pre každý nájdený
     dokument.  Služba beží od roku 2004.
@@ -238,21 +239,21 @@
 %
 \begin{frame}{Prehľad citačných indikátorov}
   \begin{table}
-    \centering\footnotesize
-    \begin{tabular}{llcr}
+    \footnotesize
+    \begin{tabular}{lllr}
       \toprule
-      slovenský názov & anglický názov & skratka & kap. \\
+      Slovenský názov & Anglický názov & Skratka & Kap. \\
       \midrule
       \rowcolor{LRed} impakt faktor                 & \emph{Journal Impact Factor}    & IF        & 1.5.1 \\[0.5ex]
       \rowcolor{LRed} SciMago rang časopisu         & \emph{SciMago Journal Rank}     & SJR       & 1.5.2 \\[0.5ex]
-      \rowcolor{LRed} CiteScore$^\dagger$            & \emph{CiteScore}                & CS        & 1.5.3 \\[0.5ex]
+      \rowcolor{LRed} CiteScore\,$^\dagger$         & \emph{CiteScore}                & CS        & 1.5.3 \\[0.5ex]
       \rowcolor{LRed} normalizovaný impakt časopisu & \emph{Source normalized impact} & SNIP      & 1.5.4 \\[-0.25ex]
       \rowcolor{LRed} na dokument                   & \emph{per paper}                &           &       \\[0.5ex]
       Hirschov index                                & \emph{Hirsh's index}            & $h$-index & 1.6.1 \\[1.5ex]
       Eggheov index                                 & \emph{Egghe's index}            & $g$-index & 1.6.2 \\[0.5ex]
       \bottomrule
       \multicolumn{4}{l}{\tiny {\color{red} červenou farbou} sú označené citačné indikátory na hodnotenie časopisov} \\
-      \multicolumn{4}{l}{\tiny $^\dagger$ indikátory, ktorých názov sa neprekladá so slovenčiny}
+      \multicolumn{4}{l}{\tiny $^\dagger$\,indikátory, ktorých názov sa neprekladá so slovenčiny}
     \end{tabular}
   \end{table}
 \end{frame}
@@ -305,34 +306,30 @@
 % Analyza pracovnikov: Zoznam pracovnikov
 %
 \begin{frame}{Rozdelenie pracovníkov do katedier}
-
   \begin{table}
-    \centering\footnotesize
-    \begin{tabular}{llc}
-      \toprule%\noalign{\vspace{.3ex}}
-      Názov katedry                             & Skr.    & $n^\dagger$\\%[0.3ex]
-      \midrule%\noalign{\vspace{.5ex}}
-      Katedra biológie                          & KB      & 13$^{\mathrm{a}}$ \\%[0.5ex]
-      Katedra biotechnológií                    & KBt     & 10$^{\mathrm{b}}$ \\%[0.5ex]
-      Katedra chémie                            & KCh     & 18$^{\mathrm{c}}$ \\%[0.5ex]
-      Katedra ekochémie a rádiobiológie         & KER     & 6$^{\mathrm{d}}$ \\%[-0.25ex]
-      Kat. aplikovanej informatiky a matematiky & KAIM    & 14$^{\mathrm{e}}$ \\%[-0.25ex]
-      Katedra biofyziky                         & KBf     & 6$^{\mathrm{f}}$ \\%[0.5ex]
-      Katedra odbornej jazykovej prípravy       & KOIP    & 2$^{\mathrm{g}}$ \\%[-0.25ex]
+    \footnotesize
+    \begin{tabular}{llc@{}l}
+      \toprule
+      Názov katedry & Skratka & $n$&$^\dagger$ \\
+      \midrule
+      Katedra biológie                          & KB   &           13&\,$^{\mathrm{a}}$ \\
+      Katedra biotechnológií                    & KBt  &           10&\,$^{\mathrm{b}}$ \\
+      Katedra chémie                            & KCh  &           18&\,$^{\mathrm{c}}$ \\
+      Katedra ekochémie a rádiobiológie         & KER  & \phantom{1}6&\,$^{\mathrm{d}}$ \\
+      Kat. aplikovanej informatiky a matematiky & KAIM &           14&\,$^{\mathrm{e}}$ \\
+      Katedra biofyziky                         & KBf  & \phantom{1}6&\,$^{\mathrm{f}}$ \\
+      Katedra odbornej jazykovej prípravy       & KOIP & \phantom{1}2&\,$^{\mathrm{g}}$ \\
       \bottomrule
-      \multicolumn{3}{l}{\tiny $^\dagger$ počet pracovníkov katedry} \\
-      %\tiny{$^{\mathrm{a}}$ \url{http://kb.fpv.ucm.sk/}} & \multicolumn{2}{l}{\tiny $^{\mathrm{b}}$ \url{http://katedra-biotechnologii.webnode.sk/}} \\
-      \multicolumn{3}{l}{\tiny $^{\mathrm{a}}$ \url{http://kb.fpv.ucm.sk/}} \\
-      \multicolumn{3}{l}{\tiny $^{\mathrm{b}}$ \url{http://katedra-biotechnologii.webnode.sk/}}\\
-      \multicolumn{3}{l}{\tiny $^{\mathrm{c}}$ \url{http://kchfpv.weebly.com/}} \\
-      \multicolumn{3}{l}{\tiny $^{\mathrm{d}}$ \url{http://ker.fpv.ucm.sk/}} \\
-      \multicolumn{3}{l}{\tiny $^{\mathrm{e}}$ \url{http://ki.fpv.ucm.sk/}} \\
-      \multicolumn{3}{l}{\tiny $^{\mathrm{f}}$ \url{http://fpv.ucm.sk/sk/katedra-biofyziky.html}} \\
-      \multicolumn{3}{l}{\tiny $^{\mathrm{g}}$ \url{http://kaj.fpv.ucm.sk/}} \\
+      \multicolumn{4}{l}{\tiny $^\dagger$\,počet pracovníkov katedry} \\
+      \multicolumn{4}{l}{\tiny $^{\mathrm{a}}$\,\url{http://kb.fpv.ucm.sk/}} \\
+      \multicolumn{4}{l}{\tiny $^{\mathrm{b}}$\,\url{http://katedra-biotechnologii.webnode.sk/}} \\
+      \multicolumn{4}{l}{\tiny $^{\mathrm{c}}$\,\url{http://kchfpv.weebly.com/}} \\
+      \multicolumn{4}{l}{\tiny $^{\mathrm{d}}$\,\url{http://ker.fpv.ucm.sk/}} \\
+      \multicolumn{4}{l}{\tiny $^{\mathrm{e}}$\,\url{http://ki.fpv.ucm.sk/}} \\
+      \multicolumn{4}{l}{\tiny $^{\mathrm{f}}$\,\url{http://fpv.ucm.sk/sk/katedra-biofyziky.html}} \\
+      \multicolumn{4}{l}{\tiny $^{\mathrm{g}}$\,\url{http://kaj.fpv.ucm.sk/}} \\
     \end{tabular}
-  \end{table}                                  
-                                               
-
+  \end{table}
 \end{frame}
 
 %
@@ -416,21 +413,21 @@
       \toprule
       & \multicolumn{3}{c}{Katedra chémie FPV} & & \multicolumn{3}{c}{\citet{Kazakis2015}} \\
       \cmidrule{2-4}\cmidrule{6-8}
-      Indikátor & Scopus & WoS & GS & & Atény$^{\mathrm{a}}$ & Solún$^{\mathrm{a}}$ & Patra$^{\star}$ \\
+      Indikátor & Scopus & WoS & GS & & Atény\,$^\ast$ & Solún\,$^\ast$ & Patra\,$^\ast$ \\
       \midrule
-      $n$            & 18    & 18    & 18    & & 72    & 34    & 30    \\
-      $P$            & 1106  & 1120  & 1525  & & 4463  & 2253  & 2573  \\
-      P/A$^\dagger$  & 15,42 & 16,14 & 25,74 & & 62    & 66,3  & 85,8  \\
-      $c$            & 19248 & 19223 & 25208 & & 74368 & 39695 & 63718 \\
-      C/P$^\ddagger$ & 12,45 & 12,62 & 11,35 & & 16,7  & 17,6  & 24,8  \\
-      $\bar{h}$      & 11,78 & 11,94 & 13,61 & & 16,3  & 16,8  & 21,3  \\
-      $\sigma (h)$   & 11,70 & 11,70 & 12,99 & & 8     & 8,5   & 1,5   \\
-      $\tilde{h}$    & 7,50  & 7,50  & 9,00  & & 15,5  & 17    & 18    \\
-      $\bar{g}$      & 19,83 & 20,22 & 23,56 & & 26,8  & 28,3  & 35,5  \\
-      $\sigma (g)$   & 22,23 & 21,68 & 24,89 & & 12,6  & 13,9  & 23    \\
-      $\tilde{g}$    & 14,50 & 15,00 & 16,50 & & 26,5  & 27    & 30,5  \\
+      $n$                              & 18    & 18    & 18    & & 72    & 34    & 30    \\
+      \rowcolor{LBlue} $P$             & 1106  & 1120  & 1525  & & 4463  & 2253  & 2573  \\
+      \rowcolor{LBlue} P/A\,$^\dagger$ & 15,42 & 16,14 & 25,74 & & 62    & 66,3  & 85,8  \\
+      $c$                              & 19248 & 19223 & 25208 & & 74368 & 39695 & 63718 \\
+      C/P\,$^\ddagger$                 & 12,45 & 12,62 & 11,35 & & 16,7  & 17,6  & 24,8  \\
+      \rowcolor{LBlue} $\bar{h}$       & 11,78 & 11,94 & 13,61 & & 16,3  & 16,8  & 21,3  \\
+      \rowcolor{LBlue} $\sigma (h)$    & 11,70 & 11,70 & 12,99 & & 8     & 8,5   & 1,5   \\
+      \rowcolor{LBlue} $\tilde{h}$     & 7,50  & 7,50  & 9,00  & & 15,5  & 17    & 18    \\
+      $\bar{g}$                        & 19,83 & 20,22 & 23,56 & & 26,8  & 28,3  & 35,5  \\
+      $\sigma (g)$                     & 22,23 & 21,68 & 24,89 & & 12,6  & 13,9  & 23    \\
+      $\tilde{g}$                      & 14,50 & 15,00 & 16,50 & & 26,5  & 27    & 30,5  \\
       \bottomrule
-      \multicolumn{8}{l}{\tiny $^\dagger$ počet autorov na publikáciu; $^\ddagger$ počet citácii na publikáciu; $^{\star}$ zdroj: Scopus}
+      \multicolumn{8}{l}{\tiny $^\dagger$\,počet autorov na publikáciu; $^\ddagger$\,počet citácii na publikáciu; $^\ast$\,zdroj: Scopus}
     \end{tabular}
   \end{table}
 \end{frame}
@@ -458,14 +455,14 @@
     \toprule
     & \multicolumn{5}{c}{\citet{Lazaridis2010}} \\
     \cmidrule{2-6}
-    Indikátor & Kréta & Patra & Solún & Ioaninna & Atény \\
+    Indikátor & Kréta\,$^\ast$ & Patra\,$^\ast$ & Solún\,$^\ast$ & Ioaninna\,$^\ast$ & Atény\,$^\ast$ \\
     \midrule
-    $P$        & 56    & 61    & 41    & 48       & 219   \\
-    $\bar{h}$  & 16,6  & 12,6  & 10,4  & 10,3     & 9,0   \\
+    $P$        & 56    & 61    & 41    & 48   & 219 \\
+    $\bar{h}$  & 16,6  & 12,6  & 10,4  & 10,3 & 9,0 \\
     \bottomrule
+    \multicolumn{6}{l}{\tiny $^\ast$\,zdroj: Web of Science}
     \end{tabular}
   \end{table}
-\parbox{\textwidth}{\centering\tiny Zdroj: Web of Science}
 \end{frame}
 
 \subsection{Časopisy s najväčším počtom publikácii z FPV}
@@ -474,26 +471,25 @@
 % Tabulka casopisov s najvacsim poctom publikacii
 %
 \begin{frame}{Svetové časopisy s najväčším počtom publikácii z FPV}
-\begin{table}
-  {\footnotesize
-  \begin{tabular}{lccccc}
-    \toprule
-     Názov časopisu & $n^\dagger$ & IF & SJR  & CS$^\ddagger$ & SNIP \\
-    \midrule
-    Chemical Papers                 & 25 & 1,326 & 0,382 & 1,36 & 0,56  \\
-    Polyhedron                      & 22 & 2,108 & 0,592 & 2,02 & 0,777 \\
-    Biologia                        & 15 & 1,10  & 0,322 & 0,88 & 0,88  \\
-    Cereal Research Communications  & 14 & 0,528 & 0,305 & 0,62 & 0,515 \\
-    Dalton Transactions             & 14 & 4,177 & 1,404 & 4,1  & 1     \\[1ex]
-    Chemicke Listy                  & 13 & 0,279 & 0,183 & 0,22 & 0,24  \\
-    Inorganic Chemistry             & 12 & 4,82  & 1,873 & 1,36 & 0,741 \\
-    Inorganica Chimica Acta         & 11 & 1,918 & 0,584 & 1,88 & 0,664 \\
-    Nova Biotechnologica et Chimica & 11 & 0,188 & 0,129 & 0,31 & 0,044 \\
-    \bottomrule \\[-2ex]
-    \multicolumn{6}{l}{\tiny $^\dagger$ Počet publikácií pracovníkov FPV; $^\ddagger$ CiteScore} \\
-  \end{tabular}}
-\end{table}
-\parbox{\textwidth}{\centering\tiny Zdroj: Scopus a Web of Science (2000-2016)}
+  \begin{table}
+    \footnotesize
+    \begin{tabular}{lc@{}lcccc}
+      \toprule
+      Názov časopisu & $n$&$^{\dagger\ast}$ & IF$^\ast$ & SJR$^\ast$  & CS$^\ast$ & SNIP$^\ast$ \\
+      \midrule
+      Chemical Papers                 & 25& & 1,326           & 0,382 & 1,36           & 0,56\phantom{0} \\
+      Polyhedron                      & 22& & 2,108           & 0,592 & 2,02           & 0,777           \\
+      Biologia                        & 15& & 1,1\phantom{00} & 0,322 & 0,88           & 0,88\phantom{0} \\
+      Cereal Research Communications  & 14& & 0,528           & 0,305 & 0,62           & 0,515           \\
+      Dalton Transactions             & 14& & 4,177           & 1,404 & 4,1\phantom{0} & 1\phantom{,000} \\[1ex]
+      Chemicke Listy                  & 13& & 0,279           & 0,183 & 0,22           & 0,24\phantom{0} \\
+      Inorganic Chemistry             & 12& & 4,82\phantom{0} & 1,873 & 1,36           & 0,741           \\
+      Inorganica Chimica Acta         & 11& & 1,918           & 0,584 & 1,88           & 0,664           \\
+      Nova Biotechnologica et Chimica & 11& & 0,188           & 0,129 & 0,31           & 0,044           \\
+      \bottomrule
+      \multicolumn{7}{l}{\tiny $^\dagger$\,počet publikácií pracovníkov FPV; $^\ast$\,zdroj: Scopus a Web of Science (2000-2016)} \\
+    \end{tabular}
+  \end{table}
 \end{frame}
 
 
@@ -550,25 +546,25 @@
 
 \begin{frame}{Iné zdroje impakt faktoru}
   \begin{table}
-    \centering\footnotesize
-    \begin{tabular}{lccl}
+    \footnotesize
+    \begin{tabular}{lcc@{\,}ll}
       \toprule
-      Časopis & ISI JIF & IF & Zdroj \\
+      Časopis & ISI JIF & IF &  & Zdroj \\
       \midrule
-      Polish Journal of Enviromental Studies   & 0,79  & 0,71           & Research Gate$^{\mathrm{a}}$ \\[0.5ex]
-      Pharmazie                                & 1,264 & 1,32           & Research Gate$^{\mathrm{b}}$ \\[0.5ex]
-      Applied Mechanics and Materials          & --    & 0,16           & Research Gate$^{\mathrm{c}}$ \\[0.5ex]
-      Advanced Materials Research              & --    & 0,23           & Research Gate$^{\mathrm{d}}$ \\[0.5ex]
-      Nova Biotechnologica et Chimica          & --    & 0,188$^\dagger$ & De Gruyter$^{\mathrm{e}}$    \\[0.5ex]
-      Communications in Comp. and Inf. Science & --    & 0,35           & Research Gate$^{\mathrm{f}}$ \\[0.5ex]
+      Polish Journal of Enviromental Studies   & 0,79\phantom{0} & 0,71\phantom{0}&           & Research Gate\,$^{\mathrm{a}}$ \\[0.5ex]
+      Pharmazie                                & 1,264           & 1,32\phantom{0}&           & Research Gate\,$^{\mathrm{b}}$ \\[0.5ex]
+      Applied Mechanics and Materials          & --              & 0,16\phantom{0}&           & Research Gate\,$^{\mathrm{c}}$ \\[0.5ex]
+      Advanced Materials Research              & --              & 0,23\phantom{0}&           & Research Gate\,$^{\mathrm{d}}$ \\[0.5ex]
+      Nova Biotechnologica et Chimica          & --              & 0,188          &$^\dagger$ & De Gruyter\,$^{\mathrm{e}}$    \\[0.5ex]
+      Communications in Comp. and Inf. Science & --              & 0,35\phantom{0}&           & Research Gate\,$^{\mathrm{f}}$ \\[0.5ex]
       \bottomrule
-      \multicolumn{4}{l}{\tiny $^\dagger$ Hodnota nie je impakt faktor, ale impakt na publikáciu (IPP)} \\
-      \multicolumn{4}{l}{\tiny $^{\mathrm{a}}$ \url{https://www.researchgate.net/journal/1230-1485\_Polish\_Journal\_of\_Environmental\_Studies}} \\
-      \multicolumn{4}{l}{\tiny $^{\mathrm{b}}$ \url{https://www.researchgate.net/journal/0031-7144\_Pharmazie}} \\
-      \multicolumn{4}{l}{\tiny $^{\mathrm{c}}$ \url{https://www.researchgate.net/journal/1660-9336\_Applied\_Mechanics\_and\_Materials}} \\
-      \multicolumn{4}{l}{\tiny $^{\mathrm{d}}$ \url{https://www.researchgate.net/journal/1662-8958\_Advanced\_Materials\_Research}} \\
-      \multicolumn{4}{l}{\tiny $^{\mathrm{e}}$ \url{https://www.degruyter.com/view/j/nbec}} \\
-      \multicolumn{4}{l}{\tiny $^{\mathrm{f}}$ \url{https://www.researchgate.net/journal/1865-0929\_Communications\_in\_Computer\_and\_Information\_Science}} \\
+      \multicolumn{5}{l}{\tiny $^\dagger$\,hodnota nie je impakt faktor, ale impakt na publikáciu (IPP)} \\
+      \multicolumn{5}{l}{\tiny $^{\mathrm{a}}$\,\url{https://www.researchgate.net/journal/1230-1485\_Polish\_Journal\_of\_Environmental\_Studies}} \\
+      \multicolumn{5}{l}{\tiny $^{\mathrm{b}}$\,\url{https://www.researchgate.net/journal/0031-7144\_Pharmazie}} \\
+      \multicolumn{5}{l}{\tiny $^{\mathrm{c}}$\,\url{https://www.researchgate.net/journal/1660-9336\_Applied\_Mechanics\_and\_Materials}} \\
+      \multicolumn{5}{l}{\tiny $^{\mathrm{d}}$\,\url{https://www.researchgate.net/journal/1662-8958\_Advanced\_Materials\_Research}} \\
+      \multicolumn{5}{l}{\tiny $^{\mathrm{e}}$\,\url{https://www.degruyter.com/view/j/nbec}} \\
+      \multicolumn{5}{l}{\tiny $^{\mathrm{f}}$\,\url{https://www.researchgate.net/journal/1865-0929\_Communications\_in\_Computer\_and\_Information\_Science}} \\
     \end{tabular}
   \end{table}
 \end{frame}
